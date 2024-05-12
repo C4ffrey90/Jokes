@@ -1,3 +1,38 @@
+* {
+	margin: 0;
+	padding: 0;
+	background-color: paleturquoise;
+	text-align: center;
+}
+
 body {
-	background-color: grey;
+	height: 100vh;
+	width: 100vw;
+}
+h1 {
+	margin: 30px auto;
+}
+
+form {
+	width: 80vw;
+	height: 20vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 5% auto;
+}
+
+input {
+	margin: 15px;
+	padding: 5px;
+}
+
+input[id="search"] {
+	width: 100%;
+	height: 40px;
+	font-size: 1.4rem;
+	text-align: center;
+	border-radius: 50px;
+	border: transparent;
+	background-color: white;
 }

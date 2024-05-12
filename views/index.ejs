@@ -6,5 +6,24 @@
 		<link rel="stylesheet" href="styles/style.css" />
 		<title>Brighten my day 😁</title>
 	</head>
-	<body></body>
+	<body>
+        <h1>Search for a joke containing the word:</h1>
+        <form action="/get-joke" method="POST">
+            <label for="search">Optional</label></br>
+            <input type="text" id="search">
+           
+            <select id="category" name="category">
+                <option value="any" selected>Any</option>
+                <option value="misc">Miscellaneous</option>
+                <option value="programming">Programming</option>
+                <option value="dark">Dark</option>
+                <option value="pun">Pun</option>
+                <option value="spooky">Spooky</option>
+                <option value="christmas">Christmas</option>
+            </select>
+            <input type="submit" value="Make me laugh!">
+
+        </form>
+        <!-- Available joke categories: Any, Misc, Programming, Dark, Pun, Spooky, Christmas -->
+    </body>
 </html>
