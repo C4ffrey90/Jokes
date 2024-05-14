@@ -7,23 +7,26 @@
 		<title>Brighten my day 😁</title>
 	</head>
 	<body>
-        <h1>Search for a joke containing the word:</h1>
-        <form action="/get-joke" method="POST">
-            <label for="search">Optional</label></br>
-            <input type="text" id="search">
-           
-            <select id="category" name="category">
-                <option value="any" selected>Any</option>
-                <option value="misc">Miscellaneous</option>
-                <option value="programming">Programming</option>
-                <option value="dark">Dark</option>
-                <option value="pun">Pun</option>
-                <option value="spooky">Spooky</option>
-                <option value="christmas">Christmas</option>
-            </select>
-            <input type="submit" value="Make me laugh!">
+		<h1>Search for a joke containing the word:</h1>
+		<form action="/get-joke" method="POST">
+			<input type="submit" value="Make me laugh!" />
+			<fieldset>
+				<legend>Options:</legend>
+				<label for="search"></label><br />
+				<input type="text" id="search" placeholder="Joke with a word..." name="search" />
 
-        </form>
-        <!-- Available joke categories: Any, Misc, Programming, Dark, Pun, Spooky, Christmas -->
-    </body>
+				<select id="category" name="category">
+					<option value="any" name="any" selected>Any</option>
+					<option value="misc" name="misc">Miscellaneous</option>
+					<option value="programming" name="programming">Programming</option>
+					<option value="dark" name="dark">Dark</option>
+					<option value="pun" name="punk">Pun</option>
+					<option value="spooky" name="spooky">Spooky</option>
+					<option value="christmas" name="christmas">Christmas</option>
+				</select>
+				<label for="safe-mode">Safe Mode</label>
+				<input type="checkbox" id="safe-mode" name="safe-mode" />
+			</fieldset>
+		</form>
+	</body>
 </html>
