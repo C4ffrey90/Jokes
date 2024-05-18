@@ -13,9 +13,23 @@ app.get("/", (req, res) => {
 	res.render("index.ejs");
 });
 
-app.post("/get-joke", (req, res) => {
+app.post("/get-joke", async (req, res) => {
 	console.log(req.body);
-	res.render("index.ejs");
+	const { search, category, "safe-mode": safe } = req.body;
+	try {
+		let joke = await axios.get("https://v2.jokeapi.dev/joke/Any");
+		// console.log(joke.data);
+		// checking if it's a twopart joke or a single one
+		if (joke.data.type === "twopart") {
+			res.render("index.ejs", { setup: joke.data.setup, delivery: joke.data.delivery });
+		} else {
+			res.render("index.ejs", { joke: joke.data.joke });
+		}
+	} catch (err) {
+		console.log(err.response.status);
+		res.render("index.ejs", { error: `This joke could not be found. Please try another.` });
+	}
+	// res.render("index.ejs");
 });
 app.listen(port, () => {
 	console.log(`Listening to server on port ${port}`);

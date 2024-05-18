@@ -10,24 +10,41 @@
 		<title>Brighten my day 😁</title>
 	</head>
 	<body>
-		<form action="/get-joke" method="POST">
-			<input type="submit" value="Make me laugh!" />
-			<hr />
-			<h3>Optional:</h3>
-			<label for="search"> <input type="text" id="search" placeholder="Joke with a word..." name="search" /></label>
-			<label for="category"
-				>Category:
-				<select id="category" name="category">
-					<option value="any" name="any" selected>Any</option>
-					<option value="misc" name="misc">Miscellaneous</option>
-					<option value="programming" name="programming">Programming</option>
-					<option value="dark" name="dark">Dark</option>
-					<option value="pun" name="punk">Pun</option>
-					<option value="spooky" name="spooky">Spooky</option>
-					<option value="christmas" name="christmas">Christmas</option>
-				</select>
-			</label>
-			<label for="safe-mode">Safe Mode: <input type="checkbox" id="safe-mode" name="safe-mode" /></label>
-		</form>
+		<div class="grid-container">
+			<form action="/get-joke" method="POST">
+				<input type="submit" value="Make me laugh! 🤪" />
+				<hr />
+				<h3>Optional:</h3>
+				<label for="search"> <input type="text" id="search" placeholder="Joke with a word..." name="search" /></label>
+				<label for="category"
+					>Category:
+					<select id="category" name="category">
+						<option value="any" name="any" selected>Any</option>
+						<option value="misc" name="misc">Miscellaneous</option>
+						<option value="programming" name="programming">Programming</option>
+						<option value="dark" name="dark">Dark</option>
+						<option value="pun" name="punk">Pun</option>
+						<option value="spooky" name="spooky">Spooky</option>
+						<option value="christmas" name="christmas">Christmas</option>
+					</select>
+				</label>
+				<label for="safe-mode">Safe Mode: <input type="checkbox" id="safe-mode" name="safe-mode" /></label>
+			</form>
+			<% if (locals.setup) { %>
+			<div class="joke">
+				<p><%= setup || joke%></p>
+				<div class="part2"><p><%= delivery %></p></div>
+			</div>
+			<br />
+			<% } if (locals.joke) { %>
+			<div class="joke">
+				<p><%= joke%></p>
+			</div>
+			<% } else { %>
+			<div class="joke">
+				<p class="error"><%= locals.error %></p>
+			</div>
+			<% } %>
+		</div>
 	</body>
 </html>

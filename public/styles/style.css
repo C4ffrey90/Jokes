@@ -23,9 +23,18 @@ hr {
 	width: 100%;
 	border: 1px dashed #262a56;
 }
+
+.grid-container {
+	display: grid;
+	grid: 100vh / 1fr 1fr;
+	column-gap: 25px;
+}
+
 form {
-	width: 65vw;
 	display: flex;
+	height: 20vh;
+	width: auto;
+	align-self: center;
 	padding: 10px 15px;
 	flex-direction: column;
 	align-items: flex-start;
@@ -36,6 +45,28 @@ form {
 	box-shadow: rgba(185, 174, 174, 0.842) 0px 18px 50px -5px;
 }
 
+p {
+	text-align: justify;
+	font-size: 1.5rem;
+	line-height: 1.4;
+}
+.joke {
+	background-color: #e3ccae;
+	/* height: 60vh; */
+	align-self: center;
+	padding: 10px 15px;
+	border-radius: 0 40px 0 40px;
+	margin: auto 20px;
+}
+
+.part2 > p {
+	text-align: right;
+}
+
+.error {
+	color: red;
+	text-align: center;
+}
 fieldset {
 	border-style: none;
 	width: 100%;
@@ -54,10 +85,8 @@ input[type="submit"] {
 	color: #ffffff;
 	cursor: pointer;
 	display: inline-block;
-	line-height: 40px;
-	outline: 0;
+	/* outline: 0; */
 	overflow: hidden;
-	/* padding: 0 20px; */
 	pointer-events: auto;
 	position: relative;
 	text-align: center;
