@@ -1,45 +1,109 @@
 * {
-	margin: 0;
 	padding: 0;
-	background-color: paleturquoise;
-	text-align: center;
+	margin: 0;
 }
-
+::placeholder {
+	color: rgba(117, 129, 235, 0.705);
+	font-size: 0.7rem;
+}
 body {
 	height: 100vh;
 	width: 100vw;
-}
-h1 {
-	margin: 30px auto;
+	background-color: #262a56;
+	color: #000000;
+	text-align: center;
+	font-family: "Poetsen One", sans-serif;
 }
 
+h3 {
+	font-size: 1.3rem;
+}
+
+hr {
+	width: 100%;
+	border: 1px dashed #262a56;
+}
 form {
-	width: 80vw;
-	height: 20vh;
+	width: 65vw;
 	display: flex;
+	padding: 10px 15px;
 	flex-direction: column;
-	align-items: center;
+	align-items: flex-start;
 	margin: 5% auto;
+	background-color: #e3ccae;
+	border-radius: 40px 0 40px 0;
+	text-align: left;
+	box-shadow: rgba(185, 174, 174, 0.842) 0px 18px 50px -5px;
 }
 
-input {
-	margin: 15px;
-	padding: 5px;
+fieldset {
+	border-style: none;
+	width: 100%;
+}
+
+input[type="submit"] {
+	width: 250px;
+	height: 40px;
+	margin: 5px auto 10px auto;
+	font-size: 1.7rem;
+	border-radius: 30px;
+	border-style: none;
+	background-color: initial;
+	background-image: linear-gradient(150deg, #262a56, #b8621b);
+	box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+	color: #ffffff;
+	cursor: pointer;
+	display: inline-block;
+	line-height: 40px;
+	outline: 0;
+	overflow: hidden;
+	/* padding: 0 20px; */
+	pointer-events: auto;
+	position: relative;
+	text-align: center;
+	touch-action: manipulation;
+	user-select: none;
+	-webkit-user-select: none;
+	vertical-align: top;
+	white-space: nowrap;
+	z-index: 9;
+	border: 0;
+	transition: box-shadow 0.2s;
+	align-self: center;
+}
+
+input[type="submit"]:hover {
+	box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
+}
+
+select {
+	/* width: 100%; */
+	font-family: "Poetsen One", sans-serif;
+	text-align: center;
+	border-style: none;
+	border-radius: 10px;
+}
+label {
+	margin: 5px;
+	padding: 0;
+	font-size: 1.1rem;
+	width: 100%;
 }
 
 input[id="search"] {
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	height: 40px;
-	font-size: 1.4rem;
+	margin: 5px auto;
+	padding: 0px;
+	height: 20px;
+	width: inherit;
+	font-size: 1.1rem;
 	text-align: center;
 	border-radius: 50px;
-	border: transparent;
+	border-style: none;
 	background-color: white;
 }
 
 legend {
 	text-align: left;
-	font-size: 1.1rem;
+	font-size: 1.4rem;
+	margin: 0 20px;
 }

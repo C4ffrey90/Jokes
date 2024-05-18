@@ -4,16 +4,19 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="styles/style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet" />
 		<title>Brighten my day 😁</title>
 	</head>
 	<body>
 		<form action="/get-joke" method="POST">
 			<input type="submit" value="Make me laugh!" />
-			<fieldset>
-				<legend>Options:</legend>
-				<label for="search"></label><br />
-				<input type="text" id="search" placeholder="Joke with a word..." name="search" />
-
+			<hr />
+			<h3>Optional:</h3>
+			<label for="search"> <input type="text" id="search" placeholder="Joke with a word..." name="search" /></label>
+			<label for="category"
+				>Category:
 				<select id="category" name="category">
 					<option value="any" name="any" selected>Any</option>
 					<option value="misc" name="misc">Miscellaneous</option>
@@ -23,9 +26,8 @@
 					<option value="spooky" name="spooky">Spooky</option>
 					<option value="christmas" name="christmas">Christmas</option>
 				</select>
-				<label for="safe-mode">Safe Mode</label>
-				<input type="checkbox" id="safe-mode" name="safe-mode" />
-			</fieldset>
+			</label>
+			<label for="safe-mode">Safe Mode: <input type="checkbox" id="safe-mode" name="safe-mode" /></label>
 		</form>
 	</body>
 </html>
