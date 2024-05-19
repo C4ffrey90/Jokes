@@ -42,7 +42,7 @@ form {
 	background-color: #e3ccae;
 	border-radius: 40px 0 40px 0;
 	text-align: left;
-	box-shadow: rgba(185, 174, 174, 0.842) 0px 18px 50px -5px;
+	box-shadow: rgba(185, 174, 174, 0.842) 0px 0px 20px 15px;
 }
 
 p {
@@ -50,17 +50,36 @@ p {
 	font-size: 1.5rem;
 	line-height: 1.4;
 }
+
+.joke-wrapper {
+	align-self: center;
+}
+
 .joke {
 	background-color: #e3ccae;
-	/* height: 60vh; */
-	align-self: center;
 	padding: 10px 15px;
 	border-radius: 0 40px 0 40px;
 	margin: auto 20px;
+	box-shadow: rgba(185, 174, 174, 0.842) 0px 0px 20px 15px;
+}
+.part2 {
+	margin-top: 15px;
+	color: #e3ccae;
+	text-align: right;
 }
 
 .part2 > p {
-	text-align: right;
+	text-decoration: underline dotted #000000;
+	background-color: #e3ccae;
+	border-radius: 10px;
+	display: inline;
+}
+/* punchline shown on hover */
+.part2 > p:hover {
+	opacity: 1;
+	transition: opacity 1s;
+	color: #000000;
+	transition: color 1s;
 }
 
 .error {
@@ -78,14 +97,12 @@ input[type="submit"] {
 	margin: 5px auto 10px auto;
 	font-size: 1.7rem;
 	border-radius: 30px;
-	border-style: none;
 	background-color: initial;
 	background-image: linear-gradient(150deg, #262a56, #b8621b);
 	box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
 	color: #ffffff;
 	cursor: pointer;
 	display: inline-block;
-	/* outline: 0; */
 	overflow: hidden;
 	pointer-events: auto;
 	position: relative;
@@ -97,12 +114,14 @@ input[type="submit"] {
 	white-space: nowrap;
 	z-index: 9;
 	border: 0;
-	transition: box-shadow 0.2s;
+
 	align-self: center;
 }
 
 input[type="submit"]:hover {
-	box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
+	box-shadow: rgba(253, 76, 0, 0.5) 2px 2px 5px 3px;
+	color: #be8436;
+	transition: color ease-in 0.5s, box-shadow ease-in 0.5s;
 }
 
 select {

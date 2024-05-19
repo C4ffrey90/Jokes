@@ -30,19 +30,21 @@
 				</label>
 				<label for="safe-mode">Safe Mode: <input type="checkbox" id="safe-mode" name="safe-mode" /></label>
 			</form>
+
 			<% if (locals.setup) { %>
-			<div class="joke">
-				<p><%= setup || joke%></p>
-				<div class="part2"><p><%= delivery %></p></div>
-			</div>
-			<br />
-			<% } if (locals.joke) { %>
-			<div class="joke">
-				<p><%= joke%></p>
-			</div>
-			<% } else { %>
-			<div class="joke">
-				<p class="error"><%= locals.error %></p>
+			<div class="joke-wrapper">
+				<div class="joke">
+					<p><%= setup || joke%></p>
+					<div class="part2"><p><%= delivery %></p></div>
+				</div>
+				<% } else if (locals.joke) { %>
+				<div class="joke">
+					<p><%= joke%></p>
+				</div>
+				<% } else if (locals.error) { %>
+				<div class="joke">
+					<p class="error"><%= locals.error %></p>
+				</div>
 			</div>
 			<% } %>
 		</div>
