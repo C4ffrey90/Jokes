@@ -16,9 +16,13 @@ app.get("/", (req, res) => {
 app.post("/get-joke", async (req, res) => {
 	console.log(req.body);
 	const { search, category, "safe-mode": safe } = req.body;
+	let query = search ? `?contains=${search.toLowerCase()}` : "";
+	// Only add this paremeter to the query if it was marked by the user
+	if (safe) {
+		query += `?safe-mode`;
+	}
 	try {
-		let joke = await axios.get("https://v2.jokeapi.dev/joke/Any");
-		// console.log(joke.data);
+		let joke = await axios.get(`https://v2.jokeapi.dev/joke/${category}${query}`);
 		// checking if it's a twopart joke or a single one
 		if (joke.data.type === "twopart") {
 			res.render("index.ejs", { setup: joke.data.setup, delivery: joke.data.delivery });
@@ -29,7 +33,6 @@ app.post("/get-joke", async (req, res) => {
 		console.log(err.response.status);
 		res.render("index.ejs", { error: `This joke could not be found. Please try another.` });
 	}
-	// res.render("index.ejs");
 });
 app.listen(port, () => {
 	console.log(`Listening to server on port ${port}`);
