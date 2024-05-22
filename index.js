@@ -14,7 +14,6 @@ app.get("/", (req, res) => {
 });
 
 app.post("/get-joke", async (req, res) => {
-	console.log(req.body);
 	const { search, category, "safe-mode": safe } = req.body;
 	let query = search ? `?contains=${search.toLowerCase()}` : "";
 	// Only add this paremeter to the query if it was marked by the user

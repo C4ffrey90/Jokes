@@ -1,18 +1,23 @@
+:root {
+	font-size: 16px;
+}
+
 * {
 	padding: 0;
 	margin: 0;
 }
 ::placeholder {
-	color: rgba(117, 129, 235, 0.705);
+	color: #7581ebb4;
 	font-size: 0.7rem;
 }
 body {
 	height: 100vh;
 	width: 100vw;
 	background-color: #262a56;
-	color: #000000;
+	color: #00008bc1;
 	text-align: center;
 	font-family: "Poetsen One", sans-serif;
+	overflow: hidden;
 }
 
 h3 {
@@ -24,25 +29,24 @@ hr {
 	border: 1px dashed #262a56;
 }
 
-.grid-container {
-	display: grid;
-	grid: 100vh / 1fr 1fr;
-	column-gap: 25px;
+.flex-container {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	height: 80vh;
 }
 
 form {
 	display: flex;
-	height: 20vh;
-	width: auto;
-	align-self: center;
+	width: 60vw;
 	padding: 10px 15px;
 	flex-direction: column;
-	align-items: flex-start;
-	margin: 5% auto;
+	justify-content: center;
+	margin: 0 0 20px 0;
 	background-color: #e3ccae;
-	border-radius: 40px 0 40px 0;
+	border-radius: 0 0 40px 40px;
 	text-align: left;
-	box-shadow: rgba(185, 174, 174, 0.842) 0px 0px 20px 15px;
+	box-shadow: rgba(197, 183, 183, 0.842) 0px 5px 10px 5px;
 }
 
 p {
@@ -53,14 +57,18 @@ p {
 
 .joke-wrapper {
 	align-self: center;
+	margin-top: 3vh;
 }
 
 .joke {
 	background-color: #e3ccae;
 	padding: 10px 15px;
-	border-radius: 0 40px 0 40px;
-	margin: auto 20px;
-	box-shadow: rgba(185, 174, 174, 0.842) 0px 0px 20px 15px;
+	width: 60vw;
+
+	border-radius: 20px;
+	margin: 10px 20px;
+	box-shadow: rgba(185, 174, 174, 0.842) 0px 0px 10px 5px;
+	animation: slide 3s;
 }
 .part2 {
 	margin-top: 15px;
@@ -69,7 +77,7 @@ p {
 }
 
 .part2 > p {
-	text-decoration: underline dotted #000000;
+	text-decoration: underline dotted #7581ebfa;
 	background-color: #e3ccae;
 	border-radius: 10px;
 	display: inline;
@@ -77,9 +85,8 @@ p {
 /* punchline shown on hover */
 .part2 > p:hover {
 	opacity: 1;
-	transition: opacity 1s;
-	color: #000000;
-	transition: color 1s;
+	transition: opacity 1s, color 1s;
+	color: #7581ebfa;
 }
 
 .error {
@@ -92,57 +99,49 @@ fieldset {
 }
 
 input[type="submit"] {
-	width: 250px;
+	width: 75%;
 	height: 40px;
 	margin: 5px auto 10px auto;
-	font-size: 1.7rem;
+	font-size: 1.5rem;
 	border-radius: 30px;
-	background-color: initial;
 	background-image: linear-gradient(150deg, #262a56, #b8621b);
 	box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
 	color: #ffffff;
 	cursor: pointer;
-	display: inline-block;
 	overflow: hidden;
-	pointer-events: auto;
-	position: relative;
 	text-align: center;
-	touch-action: manipulation;
-	user-select: none;
-	-webkit-user-select: none;
 	vertical-align: top;
-	white-space: nowrap;
-	z-index: 9;
 	border: 0;
-
-	align-self: center;
 }
 
 input[type="submit"]:hover {
 	box-shadow: rgba(253, 76, 0, 0.5) 2px 2px 5px 3px;
 	color: #be8436;
-	transition: color ease-in 0.5s, box-shadow ease-in 0.5s;
+	transition: color ease-in 0.2s, box-shadow ease-in 0.2s;
 }
 
 select {
-	/* width: 100%; */
 	font-family: "Poetsen One", sans-serif;
 	text-align: center;
 	border-style: none;
 	border-radius: 10px;
+	color: #00008bc1;
 }
 label {
-	margin: 5px;
+	margin: 2px;
 	padding: 0;
 	font-size: 1.1rem;
-	width: 100%;
+}
+
+label[for="search"] {
+	align-self: center;
 }
 
 input[id="search"] {
 	margin: 5px auto;
 	padding: 0px;
 	height: 20px;
-	width: inherit;
+	width: 100%;
 	font-size: 1.1rem;
 	text-align: center;
 	border-radius: 50px;
@@ -154,4 +153,30 @@ legend {
 	text-align: left;
 	font-size: 1.4rem;
 	margin: 0 20px;
+}
+
+footer {
+	color: #7581ebfa;
+	position: absolute;
+	bottom: 2vh;
+	display: flex;
+	justify-content: center;
+}
+
+@keyframes slide {
+	from {
+		opacity: 0;
+		transform: translateY(-80%);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+}
+
+@media screen and (max-width: 475px) {
+	:root {
+		font-size: 10px;
+	}
 }
