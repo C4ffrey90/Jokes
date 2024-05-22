@@ -93,6 +93,7 @@ p {
 	color: red;
 	text-align: center;
 }
+
 fieldset {
 	border-style: none;
 	width: 100%;
@@ -159,8 +160,8 @@ footer {
 	color: #7581ebfa;
 	position: absolute;
 	bottom: 2vh;
-	display: flex;
-	justify-content: center;
+	margin: auto;
+	width: 100vw;
 }
 
 @keyframes slide {
