@@ -156,6 +156,36 @@ legend {
 	margin: 0 20px;
 }
 
+.tooltip {
+	position: relative;
+	display: inline-block;
+	border-bottom: 2px dotted black;
+	cursor: help;
+}
+
+.tooltip .tooltiptext {
+	visibility: hidden;
+	width: 160px;
+	background-color: #131630;
+	color: #fff;
+	font-size: 0.8rem;
+	text-align: center;
+	padding: 5px 5px;
+	border-radius: 6px;
+
+	/* Position the tooltip text */
+	position: absolute;
+	top: 0%;
+	left: 60%;
+	margin-left: 80px;
+	z-index: 1;
+	line-height: 1.5;
+}
+
+.tooltip:hover .tooltiptext {
+	visibility: visible;
+}
+
 footer {
 	color: #7581ebfa;
 	position: absolute;
@@ -167,7 +197,7 @@ footer {
 @keyframes slide {
 	from {
 		opacity: 0;
-		transform: translateY(-80%);
+		transform: translateY(-50%);
 	}
 
 	to {

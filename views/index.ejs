@@ -28,7 +28,17 @@
 						<option value="christmas" name="christmas">Christmas</option>
 					</select>
 				</label>
-				<label for="safe-mode">Safe Mode: <input type="checkbox" id="safe-mode" name="safe-mode" /></label>
+
+				<label for="safe-mode"
+					><div class="tooltip">
+						<span class="tooltiptext"
+							>Checking this box will filter out 'unsafe jokes'. Unsafe jokes are those who can be considered explicit
+							in any way, either through the used language or its references. Jokes from the category Dark are also
+							generally marked as unsafe.</span
+						>Safe Mode:
+					</div>
+					<input type="checkbox" id="safe-mode" name="safe-mode"
+				/></label>
 			</form>
 
 			<% if (locals.setup) { %>
